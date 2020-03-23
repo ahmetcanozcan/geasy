@@ -1,0 +1,29 @@
+{
+  "routes": [
+    {
+      "path": "/",
+      "cmd": [
+        "node",
+        "hello.js"
+      ]
+    },
+    {
+      "path": "/echo/{message}",
+      "params": [
+        "url:message"
+      ],
+      "cmd": [
+        "node",
+        "echo.js"
+      ]
+    },
+    {
+      "path": "/echo",
+      "cmd": [
+        "echo",
+        "Hello World!"
+      ]
+    }
+  ],
+  "staticFilePath": "views"
+}
