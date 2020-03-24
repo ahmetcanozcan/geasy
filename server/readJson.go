@@ -6,18 +6,39 @@ import (
 	"io/ioutil"
 )
 
+// ResponseHeader :
+type ResponseHeader struct {
+	Key   string `json:"key"`
+	Value string `json:"value"`
+}
+
 // Route :
 type Route struct {
-	Path   string   `json:"path"`
-	Params []string `json:"params"`
-	Cmd    []string `json:"cmd"`
+	Methods []string         `json:"methods"`
+	Headers []ResponseHeader `json:"headers"`
+	Path    string           `json:"path"`
+	Params  []string         `json:"params"`
+	Cmd     []string         `json:"cmd"`
+}
+
+// Module :
+type Module struct {
+	Name string   `json:"name"`
+	Cmd  []string `json:"cmd"`
+}
+
+// Option :
+type Option struct {
+	UseLogger bool `json:"useLogger"`
 }
 
 // Config :
 type Config struct {
-	StaticFilePath string  `json:"publicFiles"`
-	Routes         []Route `json:"routes"`
-	NotFound       string  `json:"notFound"`
+	Options        Option   `json:"options"`
+	StaticFilePath string   `json:"publicDir"`
+	Routes         []Route  `json:"routes"`
+	NotFound       string   `json:"notFound"`
+	Modules        []Module `json:"modules"`
 }
 
 func readJSONFile(filePath string) *Config {

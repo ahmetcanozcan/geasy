@@ -23,7 +23,21 @@
         "echo",
         "Hello World!"
       ]
+    },
+    {
+      "path": "/onlypostecho/{message}",
+      "methods": [
+        "POST"
+      ],
+      "cmd": [
+        "node",
+        "echo.js",
+        "onlypost"
+      ],
+      "params": [
+        "url:message"
+      ]
     }
   ],
-  "staticFilePath": "views"
+  "publicDir": "views"
 }

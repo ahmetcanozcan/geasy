@@ -1,0 +1,41 @@
+{
+  "routes": [
+    {
+      "path": "/login",
+      "methods": [
+        "POST"
+      ],
+      "params": [
+        "body:username",
+        "body:password",
+        "mod:db"
+      ],
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "cmd": [
+        "node",
+        "login.js"
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "name": "db",
+      "cmd": [
+        "node",
+        "modules/db.js"
+      ]
+    },
+    {
+      "name": "test",
+      "cmd": [
+        "node",
+        "modules/test.js"
+      ]
+    }
+  ]
+}
