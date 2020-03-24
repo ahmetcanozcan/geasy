@@ -1,0 +1,13 @@
+{
+  "projectName": "",
+  "routes": [
+    {
+      "name": "test",
+      "path": "/hello",
+      "cmd": [
+        "node",
+        "test.js"
+      ]
+    }
+  ]
+}

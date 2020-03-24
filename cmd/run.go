@@ -19,7 +19,7 @@ var runCmd = &cobra.Command{
 			os.Exit(1)
 		}
 		cwd, _ := os.Getwd()
-		filePath := fmt.Sprintf("%s\\%s", cwd, args[0])
+		filePath := fmt.Sprintf("%s\\%s", cwd, "serv.json")
 		server.Run(filePath)
 	},
 }
